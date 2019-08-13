@@ -1,0 +1,120 @@
+$violet: #931dff;
+$bleu: #4aa1ff;
+$bleuCiel: #33e8ff;
+$vert: #5bff8e;
+$turquoise: #42ffc9;
+$bleuAgain: #5d7aff;
+
+$border: 2px;
+
+.gradient-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  max-width: 22em;
+  margin-top: 150px;
+  position: relative;
+  box-sizing: border-box;
+  background: #FFF;
+  color: #FFF;
+  background-clip: padding-box; /* !importanté */
+  border: solid $border transparent; /* !importanté */
+  border-radius: 50%;
+
+  &:after {
+    width: 75px;
+    height: 75px;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    background-image: url(../icone.png);
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: -$border; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    background-image: url(../border-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-animation: pulse 0.9s ease-in alternate infinite;
+    -moz-animation: pulse 0.9s ease-in alternate infinite;
+    -ms-animation: pulse 0.9s ease-in alternate infinite;
+    animation: pulse 0.9s ease-in alternate infinite;
+  }
+
+  &.conical:before{
+    background: conic-gradient($violet, $bleu, $bleuCiel, $vert, $vert, $turquoise, $bleuAgain, $violet);
+  }
+
+
+}
+
+@keyframes pulse {
+  to {
+    top: -10px;
+    right: -10px;
+    left: -10px;
+    bottom: -10px;
+    opacity: 0.2;
+  }
+}
+
+@-webkit-keyframes pulse {
+  to {
+    top: -10px;
+    right: -10px;
+    left: -10px;
+    bottom: -10px;
+    opacity: 0.2;
+  }
+}
+@-moz-keyframes pulse {
+  to {
+    top: -10px;
+    right: -10px;
+    left: -10px;
+    bottom: -10px;
+    opacity: 0.2;
+  }
+}
+@-ms-keyframes pulse {
+  to {
+    top: -10px;
+    right: -10px;
+    left: -10px;
+    bottom: -10px;
+    opacity: 0.2;
+  }
+}
+
+#svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  stroke: #666;
+  stroke-width: 1em;
+}
+#svg #bar {
+
+  //fill: linear-gradient($violet, $bleu, $bleuCiel, $vert, $vert, $turquoise, $bleuAgain, $violet);
+}
+
+html { height: 100%; background: #fff; display: flex; }
+body { margin: auto; }
+
+
